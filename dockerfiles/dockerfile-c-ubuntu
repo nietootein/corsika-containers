@@ -1,0 +1,11 @@
+FROM ubuntu:20.04
+
+LABEL author='Daniel Nieto <d.nieto@ucm.es>'
+
+RUN apt-get update && apt-get install -y csh perl gfortran make
+
+COPY ./assets/corsika-76300.tar.gz /
+
+COPY ./assets/install.sh /
+
+RUN bash /install.sh && rm /install.sh

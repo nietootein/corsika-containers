@@ -1,0 +1,11 @@
+FROM sl:7
+
+LABEL author='Daniel Nieto <d.nieto@ucm.es>'
+
+RUN yum update && yum install -y patch csh perl perl-Data-Dumper gcc-gfortran make gcc-c++ bc
+
+COPY ./assets/corsika7.6_simtelarray_2019-05-29_2020-04-30.tar.gz /
+
+COPY ./assets/install.sh /
+
+RUN bash /install.sh && rm /install.sh

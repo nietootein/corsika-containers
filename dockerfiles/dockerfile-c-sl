@@ -1,0 +1,11 @@
+FROM sl:7
+
+LABEL author='Daniel Nieto <d.nieto@ucm.es>'
+
+RUN yum update && yum install -y patch csh perl perl-Data-Dumper gcc-gfortran make
+
+COPY ./assets/corsika-76300.tar.gz /
+
+COPY ./assets/install.sh /
+
+RUN bash /install.sh && rm /install.sh
