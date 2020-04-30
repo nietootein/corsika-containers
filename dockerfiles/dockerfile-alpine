@@ -1,0 +1,11 @@
+FROM alpine:3.11
+
+LABEL author='Daniel Nieto <d.nieto@ucm.es>'
+
+RUN apk update && apk add bash tcsh perl gfortran gcc make libc-dev g++
+
+COPY ./assets/corsika7.6_simtelarray_2019-05-29_2020-04-30.tar.gz /home/
+
+COPY ./assets/install.sh /home/
+
+RUN cd /home/ && bash install.sh && rm install.sh
