@@ -1,5 +1,5 @@
-# Corsika containers
-Experimental repository meant to hold Corsika containers for IACT detectors.
+# Production of corsika and sim_telarray docker images for IACT detectors
+Disclaimer: this is an *experimental repository* NOT meant for production
 
 # Author
 D. Nieto (d.nieto@ucm.es)
