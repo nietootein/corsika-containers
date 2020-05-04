@@ -2,10 +2,16 @@ FROM alpine:3.11
 
 LABEL author='Daniel Nieto <d.nieto@ucm.es>'
 
-RUN apk update && apk add bash tcsh perl gfortran gcc make libc-dev g++
+ARG ASSETS_PASSWORD
 
-COPY ./assets/corsika7.6_simtelarray_2019-05-29_2020-04-30.tar.gz /
+RUN apk update && apk add bash tcsh perl gfortran gcc make libc-dev g++ wget
+
+RUN  wget --user CTA --password ${ASSETS_PASSWORD} http://sagan.gae.ucm.es/\~nieto/cta/sims/software/corsika7.6_simtelarray_2019-05-29_2020-04-30.tar.gz -P /
 
 COPY ./assets/install.sh /
 
 RUN bash /install.sh && rm /install.sh
+
+WORKDIR /opt/
+
+CMD bash

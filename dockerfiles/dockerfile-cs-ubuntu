@@ -2,10 +2,16 @@ FROM ubuntu:20.04
 
 LABEL author='Daniel Nieto <d.nieto@ucm.es>'
 
-RUN apt-get update && apt-get install -y patch csh perl gfortran make g++ bc
+ARG ASSETS_PASSWORD
 
-COPY ./assets/corsika7.6_simtelarray_2019-05-29_2020-04-30.tar.gz /
+RUN apt-get update && apt-get install -y patch csh perl gfortran make g++ bc wget
+
+RUN  wget --user CTA --password ${ASSETS_PASSWORD} http://sagan.gae.ucm.es/\~nieto/cta/sims/software/corsika7.6_simtelarray_2019-05-29_2020-04-30.tar.gz -P /
 
 COPY ./assets/install.sh /
 
 RUN bash /install.sh && rm /install.sh
+
+WORKDIR /opt/
+
+CMD bash

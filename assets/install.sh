@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Installation path
-target_path='/home/'
+target_path='/opt/'
 
 my_asset=`ls *tar.gz`
 my_path=`basename $my_asset .tar.gz`
