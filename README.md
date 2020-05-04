@@ -55,7 +55,7 @@ The `corsika` or `sim_telarray` code can then be found in `/opt/corsika` or `/op
 
 * [corsika](https://www.ikp.kit.edu/corsika/)
 * [sim_telarray](https://www.mpi-hd.mpg.de/hfm/~bernlohr/sim_telarray/)
-* [Cherenkov Telescope Array](www.cta-observatory.org)
+* [Cherenkov Telescope Array](https://www.cta-observatory.org)
 
 # Author
 D. Nieto (d.nieto@ucm.es)
