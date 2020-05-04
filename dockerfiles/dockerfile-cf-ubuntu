@@ -2,10 +2,16 @@ FROM ubuntu:20.04
 
 LABEL author='Daniel Nieto <d.nieto@ucm.es>'
 
-RUN apt-get update && apt-get install -y csh perl gfortran make
+ARG ASSETS_PASSWORD
 
-COPY ./assets/corsika-76300f.tar.gz /
+RUN apt-get update && apt-get install -y csh perl gfortran make wget
+
+RUN  wget --user CTA --password ${ASSETS_PASSWORD} http://sagan.gae.ucm.es/\~nieto/cta/sims/software/corsika-76300f.tar.gz -P /
 
 COPY ./assets/install.sh /
 
 RUN bash /install.sh && rm /install.sh
+
+WORKDIR /opt/
+
+CMD bash

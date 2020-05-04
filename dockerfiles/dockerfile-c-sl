@@ -2,10 +2,16 @@ FROM sl:7
 
 LABEL author='Daniel Nieto <d.nieto@ucm.es>'
 
-RUN yum update && yum install -y patch csh perl perl-Data-Dumper gcc-gfortran make
+ARG ASSETS_PASSWORD
 
-COPY ./assets/corsika-76300.tar.gz /
+RUN yum update && yum install -y patch csh perl perl-Data-Dumper gcc-gfortran make wget
+
+RUN  wget --user CTA --password ${ASSETS_PASSWORD} http://sagan.gae.ucm.es/\~nieto/cta/sims/software/corsika-76300.tar.gz -P /
 
 COPY ./assets/install.sh /
 
 RUN bash /install.sh && rm /install.sh
+
+WORKDIR /opt/
+
+CMD bash
