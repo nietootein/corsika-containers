@@ -3,11 +3,7 @@ Disclaimer: this is an **experimental repository** NOT meant for production
 
 # Requirements
 
-* [Singularity](https://sylabs.io/guides/3.5/admin-guide/installation.html)
-
-or
-
-* [Docker](https://docs.docker.com/engine/install/)
+* [Singularity](https://sylabs.io/guides/3.5/admin-guide/installation.html) or [Docker](https://docs.docker.com/engine/install/)
 
 # Installation
 
@@ -61,8 +57,8 @@ For example:
 
 | Distro | corsika | fluorescence | sim_telarray | Docker image | Docker file | Singularity image | Singularity recipe |
 |---|---|---|---|---|---|---|---|
- | Alpine 3.11 | 76300 | no | no | [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/c-alpine_v0.1.tar.gz) | dockerfile-c-alpine |
-| dockerfile-cf-alpine | Alpine 3.11 | 76300 | yes | no |  [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/cf-alpine_v0.1.tar.gz) |
+| Alpine 3.11 | 76300 | no | no | [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/c-alpine_v0.1.tar.gz) | dockerfile-c-alpine |
+| Alpine 3.11 | 76300 | yes | no |  [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/cf-alpine_v0.1.tar.gz) | dockerfile-cf-alpine | 
 | dockerfile-cs-alpine | Alpine 3.11 | 76300 | n | 2019-05-29 | [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/cs-alpine_v0.1.tar.gz) |
 | dockerfile-c-sl | SL7 | 76300 | no | no | [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/c-sl_v0.1.tar.gz) |
 | dockerfile-cf-sl | SL7 | 76300 | yes | no | [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/cf-sl_v0.1.tar.gz) |
