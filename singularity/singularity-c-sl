@@ -6,7 +6,8 @@ From: sl:7
 ./assets/corsika-76300.tar.gz /
 
 %labels
-author='Daniel Nieto <d.nieto@ucm.es>'
+author Daniel Nieto <d.nieto@ucm.es>
+version 0.1
 
 %post
 yum update && yum install -y patch csh perl perl-Data-Dumper gcc-gfortran make wget

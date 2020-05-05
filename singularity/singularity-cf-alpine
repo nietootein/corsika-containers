@@ -6,7 +6,8 @@ From: alpine:3.11
 ./assets/corsika-76300f.tar.gz /
 
 %labels
-author='Daniel Nieto <d.nieto@ucm.es>'
+author Daniel Nieto <d.nieto@ucm.es>
+version 0.1
 
 %post
 apk update && apk add bash tcsh perl gfortran gcc make libc-dev wget
