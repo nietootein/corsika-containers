@@ -1,7 +1,12 @@
-# Corsika and sim_telarray docker images for IACT detectors
+# Corsika and sim_telarray docker and singularity images for IACT detectors
 Disclaimer: this is an **experimental repository** NOT meant for production
 
 # Requirements
+
+* [Singularity](https://sylabs.io/guides/3.5/admin-guide/installation.html)
+
+or
+
 * [Docker](https://docs.docker.com/engine/install/)
 
 # Installation
@@ -10,8 +15,11 @@ Just clone the repository:
 
 `$ git clone https://github.com/nietootein/corsika-containers.git`
 
-# Usage 
-## Building images
+# Usage
+
+## With Docker
+
+### Building images
 
 Building and image from a dockerfile `mydockerfile`
 
@@ -25,7 +33,7 @@ For example:
 
 Inquires about the password should be addressed to the author. 
 
-## Running a container from a built image
+### Running a container from a built image
 
 By now the execution of corsika or sim_telarray is run in interactive mode. To run a container:
 
@@ -37,11 +45,23 @@ For example:
 
 The `corsika` or `sim_telarray` code can then be found in `/opt/corsika` or `/opt/corsika_simtelarray` respectively.
 
+## With Singularity
+
+Building and image from a Singularity recipe `myrecipe`
+
+`$ cd corsika-containers`
+
+`$ singularity build --fakeroot <myimage> <myrecipe>`
+
+For example:
+
+`$ singularity build --fakeroot cs-alpine.simg singularity/singularity-cs-alpine`
+
 ## Available images
 
-| Docker file | Distro | corsika | fluorescence | sim_telarray | image | 
-|---|---|---|---|---|---|
-| dockerfile-c-alpine | Alpine 3.11 | 76300 | no | no | [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/c-alpine_v0.1.tar.gz) |
+| Distro | corsika | fluorescence | sim_telarray | Docker image | Docker file | Singularity image | Singularity recipe |
+|---|---|---|---|---|---|---|---|
+ | Alpine 3.11 | 76300 | no | no | [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/c-alpine_v0.1.tar.gz) | dockerfile-c-alpine |
 | dockerfile-cf-alpine | Alpine 3.11 | 76300 | yes | no |  [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/cf-alpine_v0.1.tar.gz) |
 | dockerfile-cs-alpine | Alpine 3.11 | 76300 | n | 2019-05-29 | [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/cs-alpine_v0.1.tar.gz) |
 | dockerfile-c-sl | SL7 | 76300 | no | no | [v0.1](http://sagan.gae.ucm.es/~nieto/cta/sims/software/images/c-sl_v0.1.tar.gz) |
