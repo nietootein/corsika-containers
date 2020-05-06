@@ -10,7 +10,7 @@ author Daniel Nieto <d.nieto@ucm.es>
 version 0.1
 
 %post
-yum update && yum install -y patch csh perl perl-Data-Dumper gcc-gfortran make wget
+yum update -y && yum install -y patch csh perl perl-Data-Dumper gcc-gfortran make wget
 bash /install.sh && rm /install.sh
 
 %environment
