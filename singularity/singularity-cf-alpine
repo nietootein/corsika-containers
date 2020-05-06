@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: alpine:3.11
+
+%files
+./assets/install.sh /
+./assets/corsika-76300f.tar.gz /
+
+%labels
+author Daniel Nieto <d.nieto@ucm.es>
+version 0.1
+
+%post
+apk update && apk add bash tcsh perl gfortran gcc make libc-dev wget
+bash /install.sh && rm /install.sh
+
+%environment
+PATH=$PATH:/opt/corsika/run/

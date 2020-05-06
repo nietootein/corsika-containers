@@ -1,0 +1,14 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%files
+./assets/install.sh /
+./assets/corsika7.6_simtelarray_2019-05-29_2020-04-30.tar.gz /
+
+%labels
+author Daniel Nieto <d.nieto@ucm.es>
+version 0.1
+
+%post
+apt-get update && apt-get install -y patch csh perl gfortran make g++ bc wget
+bash /install.sh && rm /install.sh

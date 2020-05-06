@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%files
+./assets/install.sh /
+./assets/corsika-76300.tar.gz /
+
+%labels
+author Daniel Nieto <d.nieto@ucm.es>
+version 0.1
+
+%post
+apt-get update && apt-get install -y csh perl gfortran make wget
+bash /install.sh && rm /install.sh
+
+%environment
+PATH=$PATH:/opt/corsika/run/

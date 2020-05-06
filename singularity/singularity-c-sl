@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: sl:7
+
+%files
+./assets/install.sh /
+./assets/corsika-76300.tar.gz /
+
+%labels
+author Daniel Nieto <d.nieto@ucm.es>
+version 0.1
+
+%post
+yum update -y && yum install -y patch csh perl perl-Data-Dumper gcc-gfortran make wget
+bash /install.sh && rm /install.sh
+
+%environment
+PATH=$PATH:/opt/corsika/run/
