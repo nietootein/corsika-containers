@@ -43,6 +43,8 @@ The `corsika` or `sim_telarray` code can then be found in `/opt/corsika` or `/op
 
 ## With Singularity
 
+### Building images
+
 Building and image from a Singularity recipe `myrecipe`
 
 `$ cd corsika-containers`
@@ -52,6 +54,12 @@ Building and image from a Singularity recipe `myrecipe`
 For example:
 
 `$ singularity build --fakeroot cs-alpine.simg singularity/singularity-cs-alpine`
+
+**Note:** The following assets need to be placed into the `corsika-containers/assets` folder for the Singularity build to work. 
+
+* [corsika-76300.tar.gz](http://sagan.gae.ucm.es/~nieto/cta/sims/software/corsika-76300.tar.gz)
+* [corsika-76300f.tar.gz](http://sagan.gae.ucm.es/~nieto/cta/sims/software/corsika-76300f.tar.gz)
+* [corsika7.6_simtelarray_2019-05-29_2020-04-30.tar.gz](http://sagan.gae.ucm.es/~nieto/cta/sims/software/corsika7.6_simtelarray_2019-05-29_2020-04-30.tar.gz)
 
 ## Available images
 
