@@ -1,5 +1,7 @@
 # Corsika and sim_telarray docker and singularity images for IACT detectors
-Disclaimer: this is an **experimental repository** NOT meant for production
+* Disclaimer: this is an **experimental repository** NOT meant for production
+* The corsika_simtel bundle here used is corsika7.6 + simtelarray_2019-05-29, corresponding to the versions utilized for Prod3b
+* Only the baseline run scripts for Prod3b have been tested
 
 # Requirements
 
